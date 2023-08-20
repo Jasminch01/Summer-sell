@@ -75,7 +75,9 @@
               <h1 class="text-3xl">kitchenware</h1>
               <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 md:grid-cols-2">
                 <!-- card 1 -->
-                <div class="p-5 text-center shadow-lg md:w-80 rounded product-card">
+                <div
+                  class="p-5 text-center shadow-lg md:w-80 rounded product-card hover:cursor-pointer"
+                >
                   <div
                     class="bg-slate-200 flex items-center justify-center rounded p-5"
                   >
@@ -113,7 +115,9 @@
                   <p>39.00 TK</p>
                 </div>
                 <!-- card 2 -->
-                <div class="p-5 text-center shadow-lg md:w-80 rounded product-card">
+                <div
+                  class="p-5 text-center shadow-lg md:w-80 rounded product-card hover:cursor-pointer"
+                >
                   <div
                     class="bg-slate-200 flex items-center justify-center rounded p-5"
                   >
@@ -151,7 +155,9 @@
                   <p>25.00 TK</p>
                 </div>
                 <!-- card 3 -->
-                <div class="p-5 text-center shadow-lg md:w-80 rounded product-card">
+                <div
+                  class="p-5 text-center shadow-lg md:w-80 rounded product-card hover:cursor-pointer"
+                >
                   <div
                     class="bg-slate-200 flex items-center justify-center rounded p-5"
                   >
@@ -195,7 +201,9 @@
               <h1 class="text-3xl">Sportswear</h1>
               <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 md:grid-cols-2">
                 <!-- card 4 -->
-                <div class="p-5 text-center shadow-lg md:w-80 rounded product-card">
+                <div
+                  class="p-5 text-center shadow-lg md:w-80 rounded product-card hover:cursor-pointer"
+                >
                   <div
                     class="bg-slate-200 flex items-center justify-center rounded p-5"
                   >
@@ -233,7 +241,9 @@
                   <p>49.00 TK</p>
                 </div>
                 <!-- card 5 -->
-                <div class="p-5 text-center shadow-lg md:w-80 rounded product-card">
+                <div
+                  class="p-5 text-center shadow-lg md:w-80 rounded product-card hover:cursor-pointer"
+                >
                   <div
                     class="bg-slate-200 flex items-center justify-center rounded p-5"
                   >
@@ -271,7 +281,10 @@
                   <p>69.00 TK</p>
                 </div>
                 <!-- card 6 -->
-                <div class="p-5 text-center shadow-lg md:w-80 rounded product-card" id="products-card">
+                <div
+                  class="p-5 text-center shadow-lg md:w-80 rounded product-card hover:cursor-pointer"
+                  id="products-card"
+                >
                   <div
                     class="bg-slate-200 flex items-center justify-center rounded p-5"
                   >
@@ -315,7 +328,9 @@
               <h1 class="text-3xl">Furniture</h1>
               <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 md:grid-cols-2">
                 <!-- card 7 -->
-                <div class="p-5 text-center shadow-lg md:w-80 rounded product-card">
+                <div
+                  class="p-5 text-center shadow-lg md:w-80 rounded product-card hover:cursor-pointer"
+                >
                   <div
                     class="bg-slate-200 flex items-center justify-center rounded p-5"
                   >
@@ -353,7 +368,9 @@
                   <p>185.00 TK</p>
                 </div>
                 <!-- card 8 -->
-                <div class="p-5 text-center shadow-lg md:w-80 rounded product-card">
+                <div
+                  class="p-5 text-center shadow-lg md:w-80 rounded product-card hover:cursor-pointer"
+                >
                   <div
                     class="bg-slate-200 flex items-center justify-center rounded p-5"
                   >
@@ -391,7 +408,9 @@
                   <p>299.00 TK</p>
                 </div>
                 <!-- card 9 -->
-                <div class="p-5 text-center shadow-lg md:w-80 rounded product-card">
+                <div
+                  class="p-5 text-center shadow-lg md:w-80 rounded product-card hover:cursor-pointer"
+                >
                   <div
                     class="bg-slate-200 flex items-center justify-center rounded p-5"
                   >
@@ -436,10 +455,12 @@
             <div class="p-5 text-center shadow-lg md:w-80 rounded space-y-2">
               <p class="font-medium">Have coupon?</p>
               <input
-                type="text" placeholder="Coupon code"
+                type="text"
+                placeholder="Coupon code"
                 class="border-2 border-slate-200 p-2 md:border-r-0 focus:outline-none md:w-36 h-12"
                 id="input-coupon"
-              /><button disabled
+              /><button
+                disabled
                 class="bg-[#E527B2] text-white p-3"
                 id="apply-btn"
                 style="
@@ -451,16 +472,28 @@
               </button>
             </div>
             <div class="p-5 shadow-lg md:w-80 rounded cart-container space-y-3">
-              <ol class="list-decimal ml-4" id="cart">
-              
-              </ol>
+              <ol class="list-decimal ml-4" id="cart"></ol>
               <hr />
               <p>Total price <span id="total-price">00</span> TK</p>
               <p>Descount <span id="discount">00</span> TK</p>
               <p>Total <span id="total">00</span> TK</p>
-              <button class="p-3 bg-[#E527B2] text-white w-full">
+              <!-- Open the modal using ID.showModal() method -->
+              <button class="p-3 bg-[#E527B2] text-white w-full" onclick="my_modal_1.showModal()" id="purchase-btn" disabled>
                 Make Purchase
               </button>
+              <dialog id="my_modal_1" class="modal">
+                <form method="dialog" class="modal-box">
+                  <div class="flex justify-center items-center">
+                    <img src="./images/congo.png" alt="">
+                  </div>
+                  <p class="text-3xl font-bold text-center">Congratulations</p>
+                  <p class="text-center">You Purchase the product</p>
+                  <div class="modal-action flex justify-center">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="p-2 bg-[#E527B2] rounded text-white" id="go-home-btn">GO HOME</button>
+                  </div>
+                </form>
+              </dialog>
             </div>
           </div>
         </section>
