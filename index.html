@@ -54,7 +54,7 @@
               </h1>
               <div class="flex justify-center items-center gap-5">
                 <p class="font-medium">Use Promo Code</p>
-                <button disabled class="px-3 py-2 rounded bg-[#E527B2] text-white" id="promo-code">
+                <button  class="px-3 py-2 rounded bg-[#E527B2] text-white" id="promo-code">
                   SELL200
                 </button>
               </div>
@@ -461,7 +461,7 @@
                 id="input-coupon"
               /><button
                 disabled
-                class="bg-[#E527B2] text-white p-3"
+                class="bg-[#b63d96] text-white p-3"
                 id="apply-btn"
                 style="
                   border-bottom-right-radius: 10px;
@@ -474,11 +474,11 @@
             <div class="p-5 shadow-lg md:w-80 rounded cart-container space-y-3">
               <ol class="list-decimal ml-4" id="cart"></ol>
               <hr />
-              <p>Total price <span id="total-price">00</span> TK</p>
-              <p>Descount <span id="discount">00</span> TK</p>
-              <p>Total <span id="total">00</span> TK</p>
+              <p>Total price <span id="total-price">0</span> TK</p>
+              <p>Descount <span id="discount">0</span> TK</p>
+              <p>Total <span id="total">0</span> TK</p>
               <!-- Open the modal using ID.showModal() method -->
-              <button class="p-3 bg-[#E527B2] text-white w-full" onclick="my_modal_1.showModal()" id="purchase-btn" disabled>
+              <button class="p-3 bg-[#b63d96] text-white w-full" onclick="my_modal_1.showModal()" id="purchase-btn" >
                 Make Purchase
               </button>
               <dialog id="my_modal_1" class="modal">
@@ -490,7 +490,7 @@
                   <p class="text-center">You Purchase the product</p>
                   <div class="modal-action flex justify-center">
                     <!-- if there is a button in form, it will close the modal -->
-                    <button class="p-2 bg-[#E527B2] rounded text-white" id="go-home-btn">GO HOME</button>
+                    <button class="p-3 bg-[#b63d96] rounded text-white hover:bg-[#E527B2]" id="go-home-btn">GO HOME</button>
                   </div>
                 </form>
               </dialog>

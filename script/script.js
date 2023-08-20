@@ -15,6 +15,11 @@ const goHomeBtn = document.getElementById("go-home-btn");
 const promoCode = document.getElementById('promo-code');
 
 let totalPrice = 0;
+let totalValue;
+let discountValue;
+let afterTotal;
+
+purchaseBtn.setAttribute('disabled', false);
 
 for (const card of cards) {
   card.addEventListener("click", function () {
@@ -29,19 +34,22 @@ for (const card of cards) {
     console.log(li);
     totalPrice += productPriceValue;
 
-    const totalValue = (totalPriceValue.innerText = totalPrice);
-    if (totalValue >= 200) {
+     totalValue = (totalPriceValue.innerText = totalPrice);
+     if (totalValue >= 200) {
       applyBtn.removeAttribute("disabled", true);
+      applyBtn.style.backgroundColor = '#E527B2'
+
     }
-    if (totalValue > 0) {
+     if (totalValue > 0) {
       purchaseBtn.removeAttribute("disabled", true);
+      purchaseBtn.style.backgroundColor = '#E527B2'
     }
   });
 }
 
 applyBtn.addEventListener("click", function () {
   if (inputCoupon.value == promoCode.innerText) {
-    let discountValue = totalPrice * (20 / 100);
+    discountValue = totalPrice * (20 / 100);
     let afterTotal = totalPrice - discountValue;
     discount.innerText = discountValue.toFixed(1);
     total.innerText = afterTotal.toFixed(1);
@@ -50,12 +58,16 @@ applyBtn.addEventListener("click", function () {
 });
 
 goHomeBtn.addEventListener("click", function () {
-  totalPriceValue.innerText = "00";
-  discount.innerText = "00";
-  total.innerText = "00";
-
   while (cart.firstChild) {
-    cart.removeChild(cart.firstChild);
-    totalPrice = 0;
+    cart.removeChild(cart.firstChild);  
   }
+  totalPrice = 0;
+  totalValue = 0;
+  discountValue = 0;
+  afterTotal = 0;
+  totalPriceValue.innerText = totalPrice;
+  discount.innerText = discountValue;
+  total.innerText = afterTotal;
+  purchaseBtn.setAttribute('disabled', true);
+  applyBtn.setAttribute('disabled', true);
 });
