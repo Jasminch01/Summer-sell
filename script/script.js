@@ -30,8 +30,6 @@ for (const card of cards) {
     const li = document.createElement("li");
     li.innerText = productName;
     cart.appendChild(li);
-    // cart.style.display = 'block'
-    console.log(li);
     totalPrice += productPriceValue;
 
      totalValue = (totalPriceValue.innerText = totalPrice);
@@ -69,5 +67,8 @@ goHomeBtn.addEventListener("click", function () {
   discount.innerText = discountValue;
   total.innerText = afterTotal;
   purchaseBtn.setAttribute('disabled', true);
+  purchaseBtn.style.backgroundColor = '#b63d96'
   applyBtn.setAttribute('disabled', true);
+  applyBtn.style.backgroundColor = '#b63d96'
+
 });
