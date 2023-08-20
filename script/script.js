@@ -12,6 +12,8 @@ const purchaseBtn = document.getElementById("purchase-btn");
 
 const goHomeBtn = document.getElementById("go-home-btn");
 
+const promoCode = document.getElementById('promo-code');
+
 let totalPrice = 0;
 
 for (const card of cards) {
@@ -38,11 +40,12 @@ for (const card of cards) {
 }
 
 applyBtn.addEventListener("click", function () {
-  if (inputCoupon.value == "SELL200") {
+  if (inputCoupon.value == promoCode.innerText) {
     let discountValue = totalPrice * (20 / 100);
     let afterTotal = totalPrice - discountValue;
     discount.innerText = discountValue.toFixed(1);
     total.innerText = afterTotal.toFixed(1);
+    inputCoupon.value = '';
   }
 });
 
